@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,6 +15,7 @@ import { NavComponent } from './nav/nav.component';
    ],
    imports: [
       BrowserModule,
+      FormsModule,
       HttpClientModule
    ],
    providers: [],
