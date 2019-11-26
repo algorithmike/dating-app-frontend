@@ -11,12 +11,15 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(model: any) {
-    console.log('Model: ' + model);
     return this.http.post(this.baseUrl + 'login', model).pipe(
       map((x: any) => {
         const user = x;
         if (user) { localStorage.setItem('token', user.token); }
       })
     );
+  }
+
+  register(model: any) {
+    return this.http.post(this.baseUrl + 'register', model);
   }
 }
