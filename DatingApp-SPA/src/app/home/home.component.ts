@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
     this.getValues();
   }
 
-  registerToggle() { this.registerMode = !this.registerMode; }
+  registerToggle() {
+    this.registerMode = !this.registerMode;
+  }
 
   public getValues() {
     this.http.get('http://localhost:5000/api/values').subscribe(x => {
