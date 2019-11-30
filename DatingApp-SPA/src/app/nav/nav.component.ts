@@ -9,16 +9,20 @@ import { AlertifyService } from '../_services/alertify.service';
 })
 export class NavComponent implements OnInit {
   model: any = {};
+  uniqueName: string;
 
   constructor(private authService: AuthService,
               private alertify: AlertifyService) { }
 
   ngOnInit() {
+    this.uniqueName = (this.authService.decodedToken) ?
+      this.authService.decodedToken.unique_name : '';
   }
 
   login(): void {
     this.authService.login(this.model).subscribe(x => {
       this.alertify.success('You\'ve successfully logged in!');
+      this.uniqueName = x.unique_name;
     }, () => {
       this.alertify.error('Login attempt failed.');
     });
