@@ -3,9 +3,6 @@
     <a class="navbar-brand" [routerLink]="['/home']">Dating App</a>
     <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/home']">Home</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/members']">Matches</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
