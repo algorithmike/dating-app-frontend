@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/_models/user';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-member-edit',
@@ -9,9 +10,12 @@ import { User } from 'src/app/_models/user';
 export class MemberEditComponent implements OnInit {
   user: User;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.user = data.user;
+    });
   }
 
 }
